@@ -36,14 +36,18 @@ const displayProducts = products =>{
 
 // Bookmark handle function
 const handleBookMark = (name,id, price) => {
+    let bookMark = [];
     const product = {name,id,price,bookMark: true}
     // localStorage.setItem('bookMark', JSON.stringify(product));
     const previousBookMark = JSON.parse(localStorage.getItem('bookMark'));
     if (previousBookMark) {
         console.log('ache ache');
+        
     }
     else{
         console.log('nai');
+        bookMark.push(product);
+        localStorage.setItem("bookMark", JSON.stringify(bookMark));
     }
 }
 
